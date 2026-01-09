@@ -21,3 +21,10 @@ await expect(page.locator('.DocSearch-Hits').first()).toBeVisible();
 // await expect(page.getByRole('link', { name: 'Automated testing' })).toBeVisible();
 });
 // Test des Hooks
+
+test('Einfacher Text-Check: Seite enthält "Playwright"', async ({ page }) => {
+  await page.goto('https://playwright.dev/');
+  // Prüft, ob der Text "Playwright" irgendwo auf der Seite steht
+//  await expect(page.getByText('Playwright')).toBeVisible();
+    await expect(page.getByText('Playwright enables reliable')).toBeVisible();
+});
